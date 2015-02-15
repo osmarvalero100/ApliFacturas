@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Factura"
+  Version="11.1.2.64.36"
+  DBObjectType="table"
+  DBObjectName="facturas.factura"
+  AliasName="Factura"
+  BindingStyle="JDBC"
+  UseGlueCode="false">
+  <Attribute
+    Name="Idfactura"
+    IsNotNull="true"
+    Precision="6"
+    ColumnName="idfactura"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="facturas.factura"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="6"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Idcliente"
+    Precision="5"
+    ColumnName="idcliente"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="facturas.factura">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Fecha"
+    ColumnName="fecha"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="facturas.factura"/>
+  <AccessorAttribute
+    Name="Factura"
+    Association="factura.modelo.FacturaFk1Assoc"
+    AssociationEnd="factura.modelo.FacturaFk1Assoc.Factura"
+    AssociationOtherEnd="factura.modelo.FacturaFk1Assoc.IdclienteFactura"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="IdclienteFactura"
+    Association="factura.modelo.FacturaFk1Assoc"
+    AssociationEnd="factura.modelo.FacturaFk1Assoc.IdclienteFactura"
+    AssociationOtherEnd="factura.modelo.FacturaFk1Assoc.Factura"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Cliente"
+    Association="factura.modelo.FacturaFk1Assoc1"
+    AssociationEnd="factura.modelo.FacturaFk1Assoc1.Cliente"
+    AssociationOtherEnd="factura.modelo.FacturaFk1Assoc1.Factura"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Producto"
+    Association="factura.modelo.FacturaFk1Assoc2"
+    AssociationEnd="factura.modelo.FacturaFk1Assoc2.Producto"
+    AssociationOtherEnd="factura.modelo.FacturaFk1Assoc2.Factura"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="factura.modelo.Factura.Idfactura"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FacturaFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRIMARY"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="factura_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="factura.modelo.Factura.Idcliente"/>
+    </AttrArray>
+  </Key>
+</Entity>

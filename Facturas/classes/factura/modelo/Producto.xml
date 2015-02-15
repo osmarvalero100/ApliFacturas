@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Producto"
+  Version="11.1.2.64.36"
+  DBObjectType="table"
+  DBObjectName="facturas.producto"
+  AliasName="Producto"
+  BindingStyle="JDBC"
+  UseGlueCode="false">
+  <Attribute
+    Name="Codproducto"
+    IsNotNull="true"
+    Precision="5"
+    ColumnName="codproducto"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="facturas.producto"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Idnombre"
+    Precision="15"
+    ColumnName="idnombre"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="facturas.producto">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Precio"
+    ColumnName="precio"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="facturas.producto">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Factura"
+    Association="factura.modelo.FacturaFk1Assoc2"
+    AssociationEnd="factura.modelo.FacturaFk1Assoc2.Factura"
+    AssociationOtherEnd="factura.modelo.FacturaFk1Assoc2.Producto"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="Primary1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PRIMARY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="factura.modelo.Producto.Codproducto"/>
+    </AttrArray>
+  </Key>
+</Entity>

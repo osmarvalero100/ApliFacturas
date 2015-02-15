@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FacturaFk1Assoc2Link"
+  Version="11.1.2.64.36"
+  EntityAssociation="factura.modelo.FacturaFk1Assoc2">
+  <ViewLinkDefEnd
+    Name="ProductoView"
+    Cardinality="1"
+    Source="true"
+    Owner="factura.modelo.ProductoView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="ProductoView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="factura.modelo.ProductoView.Codproducto"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="FacturaView"
+    Cardinality="-1"
+    Owner="factura.modelo.FacturaView">
+    <DesignTime>
+      <Attr Name="_finderName" Value="FacturaView"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="factura.modelo.FacturaView.Idcliente"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DetalleView1"
+  Version="11.1.2.64.36"
+  BindingStyle="JDBC"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <SQLQuery><![CDATA[SELECT FacturasDetalle.codFactura,
+       FacturasDetalle.idproducto,
+       FacturasDetalle.cantidad
+FROM facturas.detalle FacturasDetalle]]></SQLQuery>
+  <ViewAttribute
+    Name="Codfactura"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="6"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="codFactura"
+    Expression="codFactura"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="6"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Idproducto"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="5"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    AliasName="idproducto"
+    Expression="idproducto"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Cantidad"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    AliasName="cantidad"
+    Expression="cantidad"
+    SQLType="INTEGER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </ViewAttribute>
+</ViewObject>

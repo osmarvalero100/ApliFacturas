@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ProductoView"
+  Version="11.1.2.64.36"
+  SelectList="Producto.codproducto, 
+       Producto.idnombre, 
+       Producto.precio"
+  FromList="facturas.producto Producto"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <EntityUsage
+    Name="Producto"
+    Entity="factura.modelo.Producto"/>
+  <ViewAttribute
+    Name="Codproducto"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Codproducto"
+    EntityUsage="Producto"
+    AliasName="codproducto"/>
+  <ViewAttribute
+    Name="Idnombre"
+    PrecisionRule="true"
+    EntityAttrName="Idnombre"
+    EntityUsage="Producto"
+    AliasName="idnombre"/>
+  <ViewAttribute
+    Name="Precio"
+    PrecisionRule="true"
+    EntityAttrName="Precio"
+    EntityUsage="Producto"
+    AliasName="precio"/>
+  <ViewLinkAccessor
+    Name="FacturaView"
+    ViewLink="factura.modelo.FacturaFk1Assoc2Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

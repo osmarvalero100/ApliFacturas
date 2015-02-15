@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+   <Reference name="ConnectionFact" className="oracle.jdeveloper.db.adapter.DatabaseProvider" credentialStoreKey="ConnectionFact" xmlns="">
+      <Factory className="oracle.jdeveloper.db.adapter.DatabaseProviderFactory"/>
+      <RefAddresses>
+         <StringRefAddr addrType="subtype">
+            <Contents>MYSQL</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>localhost</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>root</Contents>
+         </StringRefAddr>
+         <SecureRefAddr addrType="password"/>
+         <StringRefAddr addrType="dataSourceName">
+            <Contents>facturas</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>com.mysql.jdbc.Driver</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+</References>
